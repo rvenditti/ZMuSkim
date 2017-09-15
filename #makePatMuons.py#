@@ -1,0 +1,25 @@
+patMuons = cms.EDProducer("PATMuonProducer",
+    # input
+    muonSource      = cms.InputTag("muons"),
+
+ 
+    # embedding objects
+    embedMuonBestTrack      = cms.bool(True),  ## embed in AOD externally stored muon best track from global pflow
+     forceBestTrackEmbedding = cms.bool(False), ## force embedding separately the best tracks even if they're already embedded e.g. as tracker or global tracks
+    embedTrack          = cms.bool(False), ## embed in AOD externally stored tracker track
+    embedCombinedMuon   = cms.bool(True),  ## embed in AOD externally stored combined muon track
+    embedStandAloneMuon = cms.bool(True),  ## embed in AOD externally stored standalone muon track
+
+    # high level selections
+    embedHighLevelSelection = cms.bool(True),
+    beamLineSrc             = cms.InputTag("offlineBeamSpot"),
+    pvSrc                   = cms.InputTag("offlinePrimaryVertices"),
+
+    
+)
+
+
+
+
+
+
